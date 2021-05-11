@@ -70,9 +70,11 @@ class MongodbMarkov:
         least_common = self.least_common_words(text, limit=limit)
         for i in range(limit):
             if i < len(least_common):
-                yield self.generate_from_mid(least_common[i])
+                result = self.generate_from_mid(least_common[i])
             else:
-                yield self.generate_forwards()
+                result = self.generate_forwards()
+            if result is not None:
+                yield result
 
     def _split_text(self, text):
         parts = re.split(self.punctuation, text)
