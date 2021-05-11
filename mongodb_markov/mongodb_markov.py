@@ -17,7 +17,7 @@ class Triple:
 
 
 class MongodbMarkov:
-    punctuation = r'(\W+)'
+    delimiters = r'([ !"#$%&\'()*+,-./:;<=>?\[\\\]^_`{|}~])'
 
     def __init__(self, db_client=None, db_url='localhost:27017', db_name='mongodb_markov'):
         self.db_url = db_url
@@ -77,7 +77,7 @@ class MongodbMarkov:
                 yield result
 
     def _split_text(self, text):
-        parts = re.split(self.punctuation, text)
+        parts = re.split(self.delimiters, text)
         if len(parts) == 0:
             return
         if parts[0] != '':
