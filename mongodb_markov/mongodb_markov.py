@@ -27,7 +27,7 @@ class MongodbMarkov:
         self.words = self.db['words']
         self.triples = self.db['triples']
         for index in ('w1', 'w2', 'w3', 'p1', 'p2', 'tags'):
-            self.triples.create_index(index)
+            self.triples.create_index([(index, pymongo.HASHED)])
 
     def insert_text(self, text, tag=None):
         for triple in self._split_text(text):
