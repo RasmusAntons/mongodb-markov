@@ -17,7 +17,7 @@ class Triple:
 
 
 class MongodbMarkov:
-    delimiters = r'([ !"#$%&\'()*+,-./:;<=>?\[\\\]^_`{|}~])'
+    delimiters = r'([ !"#$%&\'()*+,-./:;<=>?\[\\\]^_`{|}~]+)'
 
     def __init__(self, db_client=None, db_url='localhost:27017', db_name='mongodb_markov'):
         self.db_url = db_url
