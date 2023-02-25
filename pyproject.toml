@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools >= 40.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mongodb-markov"
+description = "Text generation Markov Chains using MongoDB"
+version = "0.0.1"
+authors = [
+    { name = "Rasmus Antons", email = "mail@rasmusantons.de" }
+]
+dependencies = [
+    "pymongo~=4.3"
+]
+
