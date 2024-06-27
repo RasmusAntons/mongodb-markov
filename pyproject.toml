@@ -10,6 +10,6 @@ authors = [
     { name = "Rasmus Antons", email = "mail@rasmusantons.de" }
 ]
 dependencies = [
-    "pymongo~=4.3"
+    "pymongo~=4.8"
 ]
 
